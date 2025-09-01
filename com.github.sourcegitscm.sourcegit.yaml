@@ -1,0 +1,48 @@
+id: com.github.sourcegitscm.sourcegit
+runtime: org.freedesktop.Sdk # Platform
+runtime-version: "24.08"
+sdk: org.freedesktop.Sdk
+sdk-extensions:
+  - org.freedesktop.Sdk.Extension.dotnet9
+build-options:
+  prepend-path: "/usr/lib/sdk/dotnet9/bin"
+  append-ld-library-path: "/usr/lib/sdk/dotnet9/lib"
+  prepend-pkg-config-path: "/usr/lib/sdk/dotnet9/lib/pkgconfig"
+
+command: SourceGit
+
+finish-args:
+  - --device=dri
+  - --socket=x11
+  - --share=ipc
+  - --share=network
+  - --env=DOTNET_ROOT=/app/lib/dotnet
+  - --filesystem=home
+
+modules:
+  - name: dotnet
+    buildsystem: simple
+    build-commands:
+      - /usr/lib/sdk/dotnet9/bin/install.sh
+
+  - name: sourcegit
+    buildsystem: simple
+    sources:
+      - type: git
+        url: https://github.com/sourcegit-scm/sourcegit
+      - nuget-sources.json
+      - type: file
+        path: com.github.sourcegitscm.sourcegit.metainfo.xml
+      - type: file
+        path: com.github.sourcegitscm.sourcegit.desktop
+
+    build-commands:
+      - DOTNET_CLI_TELEMETRY_OPTOUT=1 DOTNET_SKIP_FIRST_TIME_EXPERIENCE=true DOTNET_NOLOGO=true
+        dotnet publish src/SourceGit.csproj -c Release --source ./nuget-sources
+        -p:DisableAot=true
+        -p:DisableUpdateDetection=true
+      - mkdir -p ${FLATPAK_DEST}/bin
+      - cp -r src/bin/Release/net9.0/publish/* ${FLATPAK_DEST}/bin
+      - install -Dm644 "./com.github.sourcegitscm.sourcegit.desktop" "${FLATPAK_DEST}/share/applications/com.github.sourcegitscm.sourcegit.desktop"
+      - install -Dm644 "build/resources/_common/icons/sourcegit.png" "${FLATPAK_DEST}/share/icons/hicolor/256x256/apps/com.github.sourcegitscm.sourcegit.png"
+      - install -Dm644 "./com.github.sourcegitscm.sourcegit.metainfo.xml" "${FLATPAK_DEST}/share/metainfo/com.github.sourcegitscm.sourcegit.metainfo.xml"

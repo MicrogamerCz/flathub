@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+SPDX-License-Identifier: MIT
+ -->
+<component type="desktop-application">
+   <id>com.github.sourcegitscm.sourcegit</id>
+   <name>SourceGit</name>
+
+   <!-- <developer id="com.github">
+     <name>sourcegit_scm</name>
+   </developer> -->
+
+   <summary>Windows/macOS/Linux GUI client for GIT users </summary>
+
+   <metadata_license>MIT</metadata_license>
+   <project_license>MIT</project_license>
+   <url type="homepage">https://github.com/sourcegit-scm/sourcegit</url>
+   <keywords>
+    <keyword>SourceGit</keyword>
+    <keyword>git</keyword>
+    <keyword>linux</keyword>
+    <keyword>flatpak</keyword>
+   </keywords>
+   <provides>
+    <binary>SourceGit</binary>
+   </provides>
+
+   <supports>
+     <control>pointing</control>
+     <control>keyboard</control>
+     <control>touch</control>
+   </supports>
+
+   <description>
+    <p>Highlights</p>
+    <ul>
+        <li>Supports Windows/macOS/Linux</li>
+        <li>Opensource/Free</li>
+        <li>Fast</li>
+        <li
+            >Deutsch/English/Español/Français/Italiano/Português/Русский/Українська/简体中文/繁體中文/日本語/தமிழ் (Tamil)</li>
+        <li>Built-in light/dark themes</li>
+        <li>Customize theme</li>
+        <li>Visual commit graph</li>
+        <li>Supports SSH access with each remote</li>
+        <li>GIT commands with GUI</li>
+        <li>Clone/Fetch/Pull/Push...</li>
+        <li>Merge/Rebase/Reset/Revert/Cherry-pick...</li>
+        <li>Amend/Reword/Squash</li>
+        <li>Interactive rebase</li>
+        <li>Branches</li>
+        <li>Remotes</li>
+        <li>Tags</li>
+        <li>Stashes</li>
+        <li>Submodules</li>
+        <li>Worktrees</li>
+        <li>Archive</li>
+        <li>Diff</li>
+        <li>Save as patch/apply</li>
+        <li>File histories</li>
+        <li>Blame</li>
+        <li>Revision Diffs</li>
+        <li>Branch Diff</li>
+        <li>Image Diff - Side-By-Side/Swipe/Blend</li>
+        <li>Git command logs</li>
+        <li>Search commits</li>
+        <li>GitFlow</li>
+        <li>Git LFS</li>
+        <li>Bisect</li>
+        <li>Issue Link</li>
+        <li>Workspace</li>
+        <li>Custom Action</li>
+        <li
+            >Using AI to generate commit message (C# port of https://github.com/anjerodev/commitollama)</li>
+    </ul>
+   </description>
+
+    <content_rating type="oars-1.0" />
+   <launchable
+        type="desktop-id"
+    >com.github.sourcegitscm.sourcegit.desktop</launchable>
+   <screenshots>
+     <screenshot type="default">
+       <image
+            >https://github.com/sourcegit-scm/sourcegit/raw/master/screenshots/theme_dark.png</image>
+        <caption>Dark Theme</caption>
+     </screenshot>
+     <screenshot>
+       <image
+            >https://github.com/sourcegit-scm/sourcegit/raw/master/screenshots/theme_light.png</image>
+        <caption>Light Theme</caption>
+     </screenshot>
+   </screenshots>
+
+   <branding>
+     <color type="primary" scheme_preference="light">#ffffff</color>
+     <color type="primary" scheme_preference="dark">#000000</color>
+   </branding>
+
+   <releases>
+        <release version="0.3.2" date="2025-08-09">
+            <url
+                type="details"
+            >https://github.com/MicrogamerCz/Piki/releases/tag/0.3.2</url>
+            <description>
+            <p
+                >Switched from KWallet to QtKeychain for better compatibility on environments without KWallet</p>
+            </description>
+        </release>
+    </releases>
+ </component>
