@@ -98,13 +98,33 @@ SPDX-License-Identifier: MIT
    </branding>
 
    <releases>
-        <release version="0.3.2" date="2025-08-09">
+        <release version="2025.33" date="2025-09-01">
             <url
                 type="details"
-            >https://github.com/MicrogamerCz/Piki/releases/tag/0.3.2</url>
+            >https://github.com/sourcegit-scm/sourcegit/releases/tag/v2025.33</url>
             <description>
-            <p
-                >Switched from KWallet to QtKeychain for better compatibility on environments without KWallet</p>
+              <p>What's Changed</p>
+              <ul>
+                <li>Add a new button Paste (Replace all) in commit message textbox to replace all content with clipboard text.</li>
+                <li>Warn users if they are using vimdiff or nvimdiff as external merge/diff tool.</li>
+                <li>Auto-sanitize branch/tag name.</li>
+                <li>Supports to load OpenAI API key from env.</li>
+                <li>Fix the issue that sometimes the group header (LOCAL BRANCHES, REMOTES etc.) are disappeared.</li>
+                <li>Better indication and context-menu commands for worktree-linked branch.</li>
+                <li>Supports to enable --no-verify option while committing.</li>
+                <li>Try to load LFS image from local cache directory first before loading it by git lfs smudge command.</li>
+                <li>Fix the issue that modified/renamed issue tracker rules can not be saved.</li>
+                <li>Allow to disable auto-hide feature of ScrollBar.</li>
+                <li>Allow to scroll the text-diff-view by clicking the change minimap bar.</li>
+                <li>Fix the issue that getting wrong commit list while rebasing interactively with merged commits.</li>
+                <li>Rewrite the way to checkout untracked/new-added file from stash.</li>
+                <li>Automatically move selection to next commit after applying a shortcut during interactive rebase.</li>
+                <li>Allow multiple-selection in interactive rebase view.</li>
+                <li>Do not clear existing history filters after branch checkouted.</li>
+                <li>Support to scan custom directory instead of default clone dir.</li>
+                <li>Fix the issue that button in confirm-empty-commit dialog can be pressed more than one time.</li>
+                <li>Several other UI/UX changes.</li>
+              </ul>
             </description>
         </release>
     </releases>
