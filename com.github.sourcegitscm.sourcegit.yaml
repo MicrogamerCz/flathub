@@ -2,6 +2,7 @@ id: com.github.sourcegitscm.sourcegit
 runtime: org.freedesktop.Sdk # Platform
 runtime-version: "24.08"
 sdk: org.freedesktop.Sdk
+sdk-version: "24.08"
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.dotnet9
 build-options:
