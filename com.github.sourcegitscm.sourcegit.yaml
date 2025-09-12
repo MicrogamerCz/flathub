@@ -28,8 +28,9 @@ modules:
   - name: sourcegit
     buildsystem: simple
     sources:
+      # url: https://github.com/sourcegit-scm/sourcegit
       - type: git
-        url: https://github.com/sourcegit-scm/sourcegit
+        url: https://github.com/MicrogamerCz/sourcegit
       - nuget-sources.json
       - type: file
         path: com.github.sourcegitscm.sourcegit.metainfo.xml
@@ -41,6 +42,7 @@ modules:
         dotnet publish src/SourceGit.csproj -c Release --source ./nuget-sources
         -p:DisableAot=true
         -p:DisableUpdateDetection=true
+        -p:DefineConstants="FLATPAK"
       - mkdir -p ${FLATPAK_DEST}/bin
       - cp -r src/bin/Release/net9.0/publish/* ${FLATPAK_DEST}/bin
       - install -Dm644 "./com.github.sourcegitscm.sourcegit.desktop" "${FLATPAK_DEST}/share/applications/com.github.sourcegitscm.sourcegit.desktop"
